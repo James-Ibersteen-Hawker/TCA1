@@ -163,7 +163,8 @@ body {
     }
     #body:before, #body:after {
         background: var(--white);
-        transition: 0.2s;
+        transition: 0.2s; 
     }
     
+
 }
