@@ -1,7 +1,21 @@
 body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+h1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-family: sans-serif;
+    color: white;
+    text-shadow: 0px 0px 3px rgb(215, 237, 246);
+}
+
+.pseudo-body {
     overflow: hidden;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,6 +44,7 @@ body {
     width: 80%;
     height: 80%;
     animation: floaty 2s infinite;
+    filter: drop-shadow(0px 0px 10px rgb(102, 255, 0));
 }
 
 #spooky #body {
@@ -53,7 +68,7 @@ body {
     height: 36px;
     border-radius: 50%;
     background: var(--dark);
-    animation: floaty .2s infinite;
+    animation: floaty .5s infinite;
 }
 
 #spooky #body:before {
@@ -119,6 +134,7 @@ body {
     height: 36px;
     background-color: var(--dark);
     border-radius: 50%;
+    transition: 0.2s;
 }
 
 #shadow {
@@ -151,20 +167,26 @@ body {
 }
 
 #spooky:hover {
-    #mouth {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    }
+    filter: drop-shadow(0px 0px 5px rgb(215, 237, 246));
     #body {
     background: var(--white);
     transition: 0.2s;
+    #mouth {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 30px;
+        }
+    #feet > *,
+    #feet::before,
+    #feet::after {
+        background-color: var(--white);
+        transition: 0.2s;
+    }
     }
     #body:before, #body:after {
         background: var(--white);
         transition: 0.2s; 
+        animation: floaty .2s infinite;
     }
-    
-
 }
