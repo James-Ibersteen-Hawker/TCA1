@@ -1,10 +1,15 @@
 html {
     background: #ff785a;
+    body {
+        margin: 0;
+        padding: 0;
+    }
     .spiderweb {
         background: #fff;
         width: 2px;
         height: 200px;
         margin-left: 49px;
+        transition: 1s ease-in-out;
     }
     .spider {
         position: absolute;
@@ -13,6 +18,7 @@ html {
         left: 30%;
         animation: swing 2s infinite;
         transform-origin: top;
+        transition: 0.5s ease-in-out; 
         .body {
             width: 100px;
             height: 80px;
@@ -53,7 +59,7 @@ html {
                 height: 40px;
                 margin-top: -20px;
                 border: 5px solid transparent;
-                border-top: #000;
+                border-top-color: #000;
                 border-radius: 40px 40px 0 0;
             }
         }
@@ -63,13 +69,77 @@ html {
                 transform: rotate(10deg);
                 margin-left: 10px;
             }
-        }
-        .legs.right {
-            right: -70%;
-            .leg:nth-child(1) {
-                transform: rotate(-10deg);
-                margin-left: 10px;
+            .leg:nth-child(2) {
+                transform: rotate(-20deg);
+                margin-left: 20px;
+            }
+            .leg:nth-child(3) {
+                transform: rotate(-50deg);
+                margin-left: 30px;
             }
         }
+        .legs.right {
+            right: -65%;
+            .leg:nth-child(1) {
+                transform: rotate(-10deg);
+                margin-left: -10px;
+            }
+            .leg:nth-child(2) {
+                transform: rotate(20deg);
+                margin-left: -20px;
+            }
+            .leg:nth-child(3) {
+                transform: rotate(50deg);
+                margin-left: -30px;
+            }
+        }
+    }
+    .header {
+        width: 100%;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: #663328;
+        position: relative;
+        z-index: 2;
+        font-size: 20px;
+        color: rgb(255, 243, 210);
+        font-family: sans-serif;
+        a {
+            position: absolute;
+            left: 10px;
+            color: inherit;
+            font-size: 15px;
+            height: 40px;
+            min-width: 5%;
+            text-align: center;
+            display: inline-block;
+            border-right: 1px solid rgb(255, 243, 210);
+        }
+    }
+}
+
+html:hover{
+    .spider {
+       top: -120%;
+       transition: 0.2s ease-in-out; 
+    }
+}
+
+@keyframes look {
+    0%, 40%, 100% {
+        transform: translateX(0);
+    }
+    45%, 95% {
+        transform: translateX(-110%);
+    }
+}
+
+@keyframes swing {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
     }
 }
