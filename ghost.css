@@ -207,3 +207,15 @@ body {
         animation: floaty .2s infinite;
     }
 }
+
+.tear {
+    width: 0;
+    height: 40px;
+    position: absolute;
+    z-index: 5;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid rgb(0, 255, 255);
+}

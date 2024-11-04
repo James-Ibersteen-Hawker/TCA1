@@ -1,3 +1,104 @@
 body {
     font-family: Montserrat;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(rgb(255, 123, 0), rgb(45, 94, 0), black);
+}
+
+header {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, rgb(95, 35, 0), black);
+    color: wheat;
+    text-align: center;
+    line-height: 100px;
+    font-size: 30px;
+    font-weight: 700;
+    border-bottom: 5px solid rgb(121, 48, 0);
+    box-shadow: 0px 0px 5px black inset;
+    margin-bottom: 20px;
+}
+
+.spooky-card {
+    display: inline-block;
+    width: 45%;
+    background: white;
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 30px;
+    transition: 0.2s;
+    border: 5px solid gray;
+    box-shadow: 0px 0px 10px black inset, 0px 0px 0px black;
+}
+
+a {
+    color: navy;
+}
+
+.spooky-card:hover {
+    box-shadow: 0px 0px 10px black inset, 0px 0px 20px black;
+    transition: 0.2s;
+    a {
+        color: rgb(0, 0, 179);
+    }
+}
+
+.spooky-card::after {
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    background-color: rgb(170, 84, 84);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.spooky-card::before {
+    content: ' ';
+    width: 100%;
+    height: 50%;
+    top: 0;
+    position: absolute;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+#ghost-card {
+    background-color: #424f6f;
+}
+
+#spider-card {
+    background: #ff785a;
+}
+
+#ghost-card::after {
+    content: 'Ghost';
+}
+
+#spider-card::after {
+    content: 'Spider';
+}
+
+#ghost-card::before {
+    background: url(ghost.png);
+    object-position: bottom;
+    filter: blur(5px);
+    background-size: contain;
+    background-position: center;
+}
+
+#spider-card::before {
+    background: url(spider.png);
+    background-position: center;
+    filter: blur(5px);
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
 }
