@@ -16,7 +16,7 @@ html {
         display: inline-block;
         top: 0;
         left: 30%;
-        animation: swing 2s infinite;
+        animation: swing 2s infinite, rotation 5s infinite;
         transform-origin: top;
         transition: 0.5s ease-in-out; 
         .body {
@@ -68,14 +68,20 @@ html {
             .leg:nth-child(1) {
                 transform: rotate(10deg);
                 margin-left: 10px;
+                animation: openL1 0.5s infinite;
+                animation-delay: 0.1s;
             }
             .leg:nth-child(2) {
                 transform: rotate(-20deg);
                 margin-left: 20px;
+                animation: openL2 0.5s infinite;
+                animation-delay: 0s;
             }
             .leg:nth-child(3) {
                 transform: rotate(-50deg);
                 margin-left: 30px;
+                animation: openL3 0.5s infinite;
+                animation-delay: 0.3s;
             }
         }
         .legs.right {
@@ -83,14 +89,20 @@ html {
             .leg:nth-child(1) {
                 transform: rotate(-10deg);
                 margin-left: -10px;
+                animation: openR1 0.5s infinite;
+                animation-delay: 0.2s;
             }
             .leg:nth-child(2) {
                 transform: rotate(20deg);
                 margin-left: -20px;
+                animation: openR2 0.5s infinite;
+                animation-delay: 0.4s;
             }
             .leg:nth-child(3) {
                 transform: rotate(50deg);
                 margin-left: -30px;
+                animation: openR3 0.5s infinite;
+                animation-delay: 0.5s;
             }
         }
     }
@@ -141,5 +153,70 @@ html:hover{
     }
     50% {
         transform: translateY(-20px);
+    }
+}
+
+@keyframes rotation {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+/*open L's*/
+
+@keyframes openL1 {
+    0%, 100% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+}
+
+@keyframes openL2 {
+    0%, 100% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes openL3 {
+    0%, 100% {
+        transform: rotate(-50deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes openR1 {
+    0%, 100% {
+        transform: rotate(-10deg);
+    }
+    50% {
+        transform: rotate(-20deg);
+    }
+}
+
+@keyframes openR2 {
+    0%, 100% {
+        transform: rotate(20deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes openR3 {
+    0%, 100% {
+        transform: rotate(50deg);
+    }
+    50% {
+        transform: rotate(30deg);
     }
 }
